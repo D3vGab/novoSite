@@ -1,0 +1,318 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20vh 70vh 100vh 90vh 100vh 30vh 10vh;
+    grid-template-areas: "h" "b" "p" "s" "n" "c" "d";
+  }
+  .header {
+    grid-area: h;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2em 1em;
+    border-top: 4px solid #18BC9C;
+  }
+  .header-lado {
+    display: row;
+  }
+  .tele{
+    text-align: right;
+    font-size: small;
+    margin-bottom: 2em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #EAEAEA;
+  }
+  .logo img{
+    width: 19em;
+    height: 6em;
+  }
+  .menu a {
+    text-decoration: none;
+    color: black;
+    padding: 8px;
+    border-radius: 5px;
+    text-transform: uppercase;
+  }
+  #home {
+    background-color: #18BC9C;
+  }
+  .menu a:hover {
+    background-color: #18BC9C;
+  }
+  .banner {
+    grid-area: b;
+    overflow: hidden;
+  }
+  .slider {
+    width: 400%;
+    height: 70vh;
+    display: flex;
+  }
+  .slider input{
+    display: none;
+  }
+  .slide {
+    width: 25%;
+    position: relative;
+    transition: 3s;
+  }
+  .manual-navigation {
+    position: absolute;
+    width: 100vw;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+  }
+  .manual-btn {
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+  }
+  .manual-btn:not(:last-child){
+    margin-right: 2em;
+  }
+  .manual-btn:hover {
+    background-color: white;
+  }
+  .navigation-auto{
+    position: absolute;
+    width: 100vw;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+  }
+  .navigation-auto div {
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+  }
+  .navigation-auto div:not(:last-child){
+    margin-right: 2em;
+  }
+  #radio1:checked ~ .navigation-auto .auto-btn1 {
+    background-color: #fff;
+  }
+  #radio2:checked ~ .navigation-auto .auto-btn2 {
+    background-color: #fff;
+  }
+  #radio1:checked ~ .first{
+    margin-left: 0;
+  }
+  #radio2:checked ~ .first{
+    margin-left: -25%;
+  }
+  .produtos {
+    grid-area: p;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+  .linha {
+    background-color: #18BC9C;
+    height: 5px;
+    margin: 15px;
+    width: 300px;
+  }
+  .titulo {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: larger;
+    height: 10%;
+    padding: 2em;
+  }
+  .obj {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+  }
+  .prod {
+    width: 17em;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    cursor: pointer;
+  }
+  .prod:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .prod h4 {
+    text-align: center;
+  }
+  .prod img {
+    max-width: 100%;
+  }
+  .prod button {
+    width: 200px;
+    height: 40px;
+    margin-top: 40px;
+    background-color: #18BC9C;
+    border: none;
+    color: white;
+    font-size: medium;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  .prod button:hover {
+    background-color: #05283d;
+  }
+ .preco{
+    color: #18BC9C;
+    font-weight: bold;
+  }
+  .servicos {
+    grid-area: s;
+    background-color: #18BC9C;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .servicos .titulo {
+    color: white;
+  }
+  #linha-dois {
+    background-color: white;
+    height: 5px;
+    margin: 15px;
+    width: 300px;
+  }
+  .cont-serv {
+    margin-top: 1em;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4em;
+  }
+  .serv {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    cursor: pointer;
+  }
+  .serv h2 {
+    color: white;
+  }
+  .serv p {
+    color: white;
+  }
+  .serv img {
+    max-width: 100%;
+    border-radius: 50px;
+  }
+  .serv button{
+    color: #18BC9C;
+    width: 200px;
+    height: 40px;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: medium;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .serv button:hover {
+    background-color: #05283d;
+    color: white;
+  }
+  .novidades {
+    grid-area: n;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .posts {
+    display: flex;
+    width: 90%;
+    height: 100%;
+    justify-content: center;
+    margin-top: 1em;
+    margin-bottom: 4em;
+    gap: 2%;
+  }
+  .post {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    cursor: pointer;
+  }
+  .post button{
+    background-color: #18BC9C;
+    color: white;
+    font-size: medium;
+    border: none;
+    border-radius: 20px;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+  }
+  .post button:hover {
+    background-color: #05283d;
+    color: #fff;
+  }
+  .text-align {
+    padding: 0 12px;
+  }
+  .post p {
+    margin: 15px 0 25px 0;
+  }
+  .post:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .post img {
+    max-width: 100%;
+  }
+  .contato {
+    grid-area: c;
+    border-top: 4px solid #18BC9C;
+    background-color: #2C3E50;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+  }
+  .contato-rodape{
+    color: white;
+  }
+  .titulo-rodape{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+  }
+  .text-rodape{
+    font-size: small;
+    margin-top: 5px;
+  }
+  .direitos {
+    grid-area: d;
+    background-color: #263646;
+    color: white;
+    display: flex;
+    align-items: center;
+  }
+  .direitos span{
+    margin-left: 2em;
+    font-size: smaller;
+  }
