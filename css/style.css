@@ -260,6 +260,9 @@
     justify-items: center;
     cursor: pointer;
   }
+  .post h4 {
+    margin-top: 10px;
+  }
   .post button{
     background-color: #18BC9C;
     color: white;
