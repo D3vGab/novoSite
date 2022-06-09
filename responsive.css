@@ -1,0 +1,137 @@
+html {
+    font-size: 50%;
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20vh 70vh 80vh 70vh 85vh 20vh 5vh;
+    grid-template-areas: "h" "b" "p" "s" "n" "c" "d";
+}
+
+@media (max-width: 830px) {
+    html {
+        font-size: 40%;
+    }
+    .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 20vh 30vh 60vh 60vh 70vh 20vh 5vh;
+        grid-template-areas: "h" "b" "p" "s" "n" "c" "d";
+    }
+    .slider {
+        max-height: 100%;
+    }
+    .slide {
+        max-height: 30vh;
+    }
+    .tele {
+        font-size: smaller;
+    }
+    .text-rodape {
+        font-size: smaller;
+    }
+    .direitos span {
+        font-size: 1rem;
+    }
+    img {
+        max-width: 100%;
+    }
+    .manual-navigation {
+        margin-top: -4rem;
+    }
+    .manual-btn {
+        padding: 0.2rem;
+        border-radius: 0.5rem;
+    }
+    .navigation-auto {
+        margin-top: -4rem;
+    }
+    .navigation-auto div {
+        padding: 0.2rem;
+        border-radius: 0.5rem;
+    }
+}
+@media (max-width: 782px){
+    .manual-navigation {
+        margin-top: -4rem;
+    }
+    .navigation-auto {
+        margin-top: -4rem;
+    }
+}
+@media (max-width: 727px){
+    .manual-navigation {
+        margin-top: -6rem;
+    }
+    .navigation-auto {
+        margin-top: -6rem;
+    }
+}
+@media (max-width: 680px) {
+    html {
+        font-size: 35%;
+    }
+    .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 10vh 20vh 50vh 50vh 60vh 10vh 2.5vh;
+        grid-template-areas: "h" "b" "p" "s" "n" "c" "d";
+    }
+    .manual-navigation {
+        margin-top: -3rem;
+    }
+    .navigation-auto {
+
+        margin-top: -3rem;
+    }
+}
+@media (max-width: 653px){
+    html {
+        font-size: 30%;
+    }
+    .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 10vh 20vh 50vh 40vh 50vh 10vh 2.5vh;
+        grid-template-areas: "h" "b" "p" "s" "n" "c" "d";
+    }
+    .manual-navigation {
+        margin-top: -4rem;
+    }
+    .manual-btn {
+        padding: 0.2rem;
+        border-radius: 0.5rem;
+    }
+    .navigation-auto {
+        margin-top: -4rem;
+    }
+    .navigation-auto div {
+        padding: 0.2rem;
+        border-radius: 0.5rem;
+    }
+}
+@media (max-width: 490px){
+    html {
+        font-size: 20%;
+    }
+    .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 10vh 20vh 40vh 35vh 35vh 10vh 2.5vh;
+        grid-template-areas: "h" "b" "p" "s" "n" "c" "d";
+    }
+}
+@media (max-width: 375px){
+    html {
+        font-size: 20%;
+    }
+    img {
+        max-width: 100%;
+    }
+    .tele {
+        font-size: smaller;
+    }
+    .text-rodape {
+        font-size: smaller;
+    }
+}
