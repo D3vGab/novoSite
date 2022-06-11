@@ -3,7 +3,6 @@
     <head>
         <meta charset="UTF-8">
         <link href="css/style.css" rel="stylesheet" type="text/css">
-        <link href="responsive.css" rel="stylesheet" type="text/css" media="screen and (max-width: 1100px)">
         <title>Tenha um site</title>
     </head>
 
@@ -11,26 +10,38 @@
         <div class="container">
 
             <div class="header">
-                <div class="logo">
-                    <img src="assets/logo_minha_empresa.png">
-                </div>
-                <div class="header-lado">
-                    <div class="tele">
-                        <p>(00) 0 0000-0000 - (00) 0 0000-0000</p>
-                    </div>
-                    <div class="menu">
-                        <a href="" id="home"> Home</a>
-                        <a href=""> Sobre</a>
-                        <a href=""> Equipe</a>
-                        <a href=""> Produtos</a>
-                        <a href=""> Serviços</a>
-                        <a href=""> Blog</a>
-                        <a href=""> Cliente</a>
-                        <a href=""> Contato</a>
-                    </div>
-                </div>
-                </div>
+                <picture class="logo">
+                    <source media="(min-width:460px)" srcset="assets/logo_minha_empresa.png">
+                    <source media="(min-width:260px)" srcset="assets/logo_rodape.png">
+                    <img src="assets/logo_rodape.png">
+                </picture>
 
+                <div class="header-lado">
+
+                    <div class="tele">
+                        <p>(99) 9 9999-9999</p>
+                        <p>(00) 0 0000-0000</p>
+                    </div>
+
+                    <div class="menu-header ">
+                            <div class="toggle">
+                                <div class="one"></div>
+                                <div class="two"></div>
+                                <div class="three"></div>
+                            </div>
+                        <div class="menu">
+                            <a href="" id="home">Home</a>
+                            <a href=""> Sobre</a>
+                            <a href=""> Equipe</a>
+                            <a href=""> Produtos</a>
+                            <a href=""> Serviços</a>
+                            <a href=""> Blog</a>
+                            <a href=""> Cliente</a>
+                            <a href=""> Contato</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
                 <div class="banner">
 
                     <div class="slider">
@@ -191,7 +202,7 @@
                         </div>
                         <div class="text-rodape">
                             <p>askalexandertown@gmail.com</p>
-                            <p>(00) 0 0000-0000</p>
+                            <p>(99) 9 9999-9999</p>
                             <p>(00) 0 0000-0000</p>
                         </div>
                     </div>

@@ -9,12 +9,7 @@ html {
 }
 body {
   font-size: 1.6rem;
-}
-.container{
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 20vh 70vh 100vh 90vh 100vh 30vh 10vh;
-  grid-template-areas: "h" "b" "p" "s" "n" "c" "d";
+  overflow-x: hidden;
 }
 .header {
   grid-area: h;
@@ -26,6 +21,7 @@ body {
 }
 .header-lado {
   display: row;
+  justify-content: flex-end;
 }
 .tele{
   text-align: right;
@@ -33,10 +29,19 @@ body {
   margin-bottom: 3rem;
   padding-bottom: 1.6rem;
   border-bottom: 1px solid #EAEAEA;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
-.logo img{
+.tele p:not(:last-child){
+  margin-right: 2rem;
+}
+.logo {
   width: 30rem;
   height: 9.6rem;
+}
+.logo img{
+  width: 100%;
 }
 .menu a {
   text-decoration: none;
@@ -46,6 +51,22 @@ body {
   border-radius: 0.5rem;
   text-transform: uppercase;
 }
+.menu-header{
+  display: flex;
+  justify-content: flex-end;
+}
+.toggle {
+  width: 5rem;
+  height: 5rem;
+  margin-right: 0;
+  display: none;
+}
+.one, .two, .three {
+  background-color: #18BC9C;
+  width: 100%;
+  height: 5px;
+  margin: 5px auto;
+}
 #home {
   background-color: #18BC9C;
 }
@@ -53,12 +74,10 @@ body {
   background-color: #18BC9C;
 }
 .banner {
-  grid-area: b;
   overflow: hidden;
 }
 .slider {
   width: 400%;
-  height: 70vh;
   display: flex;
 }
 .slider input{
@@ -68,6 +87,9 @@ body {
   width: 25%;
   position: relative;
   transition: 3s;
+}
+.slide img {
+  width: 100%;
 }
 .manual-navigation {
   position: absolute;
@@ -125,36 +147,41 @@ body {
   justify-content: center;
   align-items: center;
   align-content: center;
+  padding-bottom: 4rem;
 }
 .linha {
   background-color: #18BC9C;
   height: 0.5rem;
-  margin: 1.5rem;
   width: 30rem;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
 }
 .titulo {
   text-transform: uppercase;
   text-align: center;
   font-size: larger;
   height: 10%;
-  padding: 3rem;
+  margin-top: 2rem;
 }
 .obj {
   width: 90%;
-  height: 90%;
-  display: flex;
-  justify-content: space-between;
+  height: 100%;
   margin-top: 1.6rem;
+  flex-wrap: wrap;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+  justify-content: center;
+  grid-gap: 1rem;
 }
 .prod {
-  width: 27%;
-  height: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2%;
   cursor: pointer;
+  flex: 1 1 30rem;
 }
 #bug{
   margin-top: 0.5rem;
@@ -169,8 +196,8 @@ body {
   max-width: 100%;
 }
 .prod button {
-  width: 48%;
-  height: 4rem;
+  width: 50%;
+  height: 5rem;
   margin-top: 4rem;
   background-color: #18BC9C;
   border: none;
@@ -179,6 +206,7 @@ body {
   font-weight: 600;
   border-radius: 2rem;
   cursor: pointer;
+  margin-bottom: 2rem;
 }
 .prod button:hover {
   background-color: #05283d;
@@ -193,6 +221,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 5rem;
 }
 .servicos .titulo {
   color: white;
@@ -200,21 +229,20 @@ body {
 #linha-dois {
   background-color: white;
   height: 0.5rem;
-  margin-top: 2rem;
-  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
   width: 30rem;
 }
 .cont-serv {
   margin-top: 1.6rem;
-  width: 100%;
-  display: flex;
-  align-items: center;
+  margin: 0 5rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   justify-content: center;
-  gap: 5rem;
+  grid-gap: 4rem;
 }
 .serv {
-  width: 25%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -248,27 +276,28 @@ body {
   color: white;
 }
 .novidades {
-  grid-area: n;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .posts {
-  display: flex;
   width: 90%;
   height: 100%;
-  justify-content: center;
   margin-top: 1.6rem;
-  margin-bottom: 6rem;
-  gap: 2%;
+  flex-wrap: wrap;
+  margin: 2rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+  justify-content: center;
+  grid-gap: 1rem;
 }
 .post {
-  width: 27%;
   display: flex;
   flex-direction: column;
   justify-items: center;
   cursor: pointer;
-  gap: 2%;
+  padding-bottom: 2rem;
 }
 .post h4 {
   margin-top: 1rem;
@@ -301,13 +330,18 @@ body {
   max-width: 100%;
 }
 .contato {
-  grid-area: c;
   border-top: 0.4rem solid #18BC9C;
   background-color: #2C3E50;
   display: flex;
   justify-content: space-around;
   align-items: center;
   color: white;
+  padding: 2rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  justify-content: center;
+  grid-gap: 3rem;
 }
 .contato-rodape{
   color: white;
@@ -319,11 +353,11 @@ body {
   color: white;
 }
 .text-rodape{
-  font-size: small;
+  font-size: 1.4rem;
   margin-top: 0.5rem;
 }
 .direitos {
-  grid-area: d;
+  height: 5vh;
   background-color: #263646;
   color: white;
   display: flex;
@@ -332,11 +366,125 @@ body {
 .logo-rodape {
   width: 20rem;
   height: 10rem;
+  margin-bottom: 2rem;
 }
-.logo-rodape {
+.logo-rodape img {
   max-width: 100%;
 }
 .direitos span{
   margin-left: 3rem;
   font-size: smaller;
+}
+
+@media (max-width: 1030px) {
+  html {
+    font-size: 60%;
+  }
+}
+@media (max-width: 1020px) {
+  html {
+    font-size: 58%;
+  }
+}
+@media (max-width: 980px) {
+  html {
+    font-size: 55%;
+  }
+}
+@media (max-width: 920px) {
+  .menu a {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 850px){
+  .logo {
+    width: 24rem;
+  }
+}
+@media (max-width: 760px) {
+  html {
+    font-size: 50%;
+  }
+  .logo {
+    width: 20rem;
+  }
+}
+@media (max-width: 665px) {
+  html {
+    font-size: 45%;
+  }
+  h1 {
+    font-size: 2.8rem;
+  }
+}
+@media (max-width: 591px) {
+  .logo{
+    margin: 0 auto;
+    width: 30rem;
+  }
+  .menu, .tele {
+    display: none;
+  }
+  /* Full menu  */
+  .toggle {
+    display: block;
+  }
+  .menu-header.on {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: #18BC9C;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu-header.on .menu {
+
+    display: block;
+  }
+  .menu-header.on .menu a {
+    display: block;
+    text-align: center;
+    transition-duration: 0.5s;
+    font-size: 3rem;
+    color: #fff;
+    line-height: 8rem;
+  }
+  .menu-header.on .menu a:hover {
+    background-color: #66bead;
+  }
+  .menu-header.on .toggle {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+  .menu-header.on .toggle .one {
+    transform: rotate(45deg) translate(7px, 7px);
+    background-color: white;
+    transition-duration: 0.3s;
+  }
+  .menu-header.on .toggle .two {
+    opacity: 0;
+    transition-duration: 0.3s;
+  }
+  .menu-header.on .toggle .three {
+    transform: rotate(-45deg) translate(7px, -7px);
+    background-color: white;
+    transition-duration: 0.3s;
+  }
+  /* rodape */
+  .logo-rodape {
+    width: 15rem;
+  }
+  .contato-rodape, .direitos {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 360px) {
+  .logo {
+    width: 28rem;
+  }
 }
